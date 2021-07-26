@@ -2,7 +2,9 @@
 
 # EBRAINS Webcomponents
 
-Set of WebComponents to be used accross EBRAINS services. WebComponents are namespaced under `ebrains-*`
+[Demo](https://humanbrainproject.github.io/ebrains-webcomponents/index.html)
+
+Set of WebComponents for EBRAINS services. WebComponents are namespaced under `ebrains-*`
 
 ## Prettier
 
