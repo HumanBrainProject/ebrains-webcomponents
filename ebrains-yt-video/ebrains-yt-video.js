@@ -56,15 +56,15 @@
       ${styles}
       <div class="overlay">
         <div class="content">
-          <h3>Youtube Privacy Warning</h3>
-          <p>Youtube does not let you watch videos anonymously. Watching Youtube videos here will be tracked by Youtube (Google).</p>
+          <h3>EBRAINS Privacy Warning</h3>
+          <p>This page embeds a Youtube video here. You can choose to watch the video. If you do, Youtube (Google) will use cookies to track you. See <a href="https://policies.google.com/privacy?hl=en" target="_blank" rel="noopener">Youtube's privacy page.</a></p>
         </div>
         <div class="cta">
           <div>
             <input type="checkbox" id="remember" />
-            <label for="remember">Don't ask me again</label>
+            <label for="remember">Remember my choice for other videos on this website</label>
           </div>
-          <button id="watch">Watch video</button>
+          <button id="watch">Accept and Watch the Video</button>
         </div>
       </div>
     `;
