@@ -28,7 +28,7 @@ Usage
 Reference component
 
 ```
-<script src="https://cdn.jsdelivr.net/gh/HumanBrainProjectHumanBrainProject/ebrains-webcomponents/ebrains-yt-video/ebrains-yt-video.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/HumanBrainProject/ebrains-webcomponents/ebrains-yt-video/ebrains-yt-video.js"></script>
 ```
 
 Use in HTML
