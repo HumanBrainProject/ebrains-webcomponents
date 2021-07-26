@@ -2,10 +2,14 @@
   const styles = `
     <style>
       :host {
-        --overlay-fgcolor: var(--yt-video-overlay-fgcolor, #fff);
-        --overlay-bgcolor: var(--yt-video-overlay-bgcolor, rgba(0, 0, 0, .7));
+        --overlay-fgcolor: var(--ebrains-yt-video-overlay-fgcolor, #fff);
+        --overlay-bgcolor: var(--ebrains-yt-video-overlay-bgcolor, rgba(0, 0, 0, .7));
+        --overlay-a: var(--ebrains-yt-video-overlay-a, #82c558);
+        --overlay-a-hover: var(--ebrains-yt-video-overlay-a-hover, #82c558);
+        --overlay-a-active: var(--ebrains-yt-video-overlay-a-active, #82c558);
+        --overlay-a-visited: var(--ebrains-yt-video-overlay-a-visited, #82c558);
         --overlay-gradient-from: var(
-          --yt-video-overlay-gradient-from,
+          --ebrains-yt-video-overlay-gradient-from,
           var(--overlay-bgcolor)
         );
         --overlay-gradient-to: var(
@@ -19,6 +23,18 @@
         position: relative;
         width: 100%;
         height: 100%;
+      }
+      a {
+        color: var(--overlay-a);
+      }
+      a:hover {
+        color: var(--overlay-a-hover);
+      }
+      a:active {
+        color: var(--overlay-a-active);
+      }
+      a:visited {
+        color: var(--overlay-a-visited);
       }
       iframe {
         position: absolute;

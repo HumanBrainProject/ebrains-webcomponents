@@ -22,6 +22,10 @@ CSS custom properties
 | --ebrains-yt-video-overlay-bgcolor       | Overlay background color. If opaque, cover is not visible | rgba(0, 0, 0, .7)                  |
 | --ebrains-yt-video-overlay-gradient-from | Overlay vertical gradient start color                     | --ebrains-yt-video-overlay-bgcolor |
 | --ebrains-yt-video-overlay-gradient-to   | Overlay vertical gradient end color                       | --ebrains-yt-video-overlay-bgcolor |
+| --ebrains-yt-video-overlay-a             | Link color                                                | #82c558                            |
+| --ebrains-yt-video-overlay-a-hover       | Link hover color                                          | #82c558                            |
+| --ebrains-yt-video-overlay-a-active      | Link active color                                         | #82c558                            |
+| --ebrains-yt-video-overlay-a-visited     | Link visited color                                        | #82c558                            |
 
 Usage
 
