@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>EBRAINS WebComponents Demo</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../index.css" />
+	<script src="/ebrains-iam-auth/ebrains-iam-auth.js"></script>
+</head>
+
+<body>
+	<main>
+		<h1>WebComponent Demo</h1>
+		<a
+			href="https://github.com/HumanBrainProject/ebrains-webcomponents/">https://github.com/HumanBrainProject/ebrains-webcomponents</a>
+		<section>
+			<h1>ebrains-iam-auth</h1>
+			<ebrains-iam-auth client="emailsignatureapp" scope="openid profile email"></ebrains-iam-auth>
+			<pre id="user"></pre>
+			<button id="logout">logout</button>
+		</section>
+	</main>
+	<script>
+		window.addEventListener('ebrains-iam-auth:ready', () => {
+			console.log("KC JS client is ready");
+		});
+		window.addEventListener('ebrains-iam-auth:authenticated', () => {
+			const container = document.getElementById("user");
+			container.textContent = JSON.stringify(keycloak.idTokenParsed, null, 1);
+
+			const logout = document.getElementById("logout");
+			logout.addEventListener("click", () => keycloak.logout());
+		});
+	</script>
+</body>
+
+</html>
