@@ -1,3 +1,5 @@
+# 🚧 Work in progress
+
 # ebrains-iam-auth
 
 Frontend standard + pkce EBRAINS IAM authentication helper. Component handles the authentications mecanism. When client is ready, component dispatches a `ebrains-iam-auth:ready`. When user is authenticated, it triggers a `ebrains-iam-auth:authenticated` event that notifies that the login process succedeed `window.keycloak` is inited. Note that this component doesn't display anything.
@@ -12,7 +14,7 @@ Frontend standard + pkce EBRAINS IAM authentication helper. Component handles th
 | no-auto      | if present, component won't run auto login, you can handle it using `keycloak.login` when client is ready |           |
 | redirect-uri | Redirect to this URI after login                                                                          |           |
 
-ℹ️ When using `no-auto`, you have to handle the login process using `keycloak.login` (see (https://github.com/keycloak/keycloak/blob/master/adapters/oidc/js/src/main/resources/keycloak.d.ts)[https://github.com/keycloak/keycloak/blob/master/adapters/oidc/js/src/main/resources/keycloak.d.ts] for options)
+ℹ️ When using `no-auto`, you have to handle the login process using `keycloak.login` (see [https://github.com/keycloak/keycloak/blob/master/adapters/oidc/js/src/main/resources/keycloak.d.ts](https://github.com/keycloak/keycloak/blob/master/adapters/oidc/js/src/main/resources/keycloak.d.ts) for options)
 
 ## Events
 
