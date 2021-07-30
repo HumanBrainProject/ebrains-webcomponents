@@ -12,16 +12,19 @@ Frontend standard + pkce EBRAINS IAM authentication helper. Component handles th
 | no-auto      | if present, component won't run auto login, you can handle it using `keycloak.login` when client is ready |           |
 | redirect-uri | Redirect to this URI after login                                                                          |           |
 
+ℹ️ When using `no-auto`, you have to handle the login process using `keycloak.login` (see (https://github.com/keycloak/keycloak/blob/master/adapters/oidc/js/src/main/resources/keycloak.d.ts)[https://github.com/keycloak/keycloak/blob/master/adapters/oidc/js/src/main/resources/keycloak.d.ts] for options)
+
 ## Events
 
-| name                           | description                           |
-| ------------------------------ | ------------------------------------- |
-| ebrains-iam-auth:ready         | Keycloak client has been instantiated |
-| ebrains-iam-auth:authenticated | User is authenticated                 |
+| name                           | description                                       |
+| ------------------------------ | ------------------------------------------------- |
+| ebrains-iam-auth:ready         | Keycloak client has been instantiated             |
+| ebrains-iam-auth:authenticated | User is authenticated                             |
+| ebrains-iam-auth:error         | An error occured, error is passed to event.detail |
 
 ## Usage
 
-You first need a Keycloak client using the standard flow, public, setup with "Proof Key for Code Exchange Code Challenge Method" set to "S256"
+You first need a Keycloak client using the standard flow, public, setup with "Proof Key for Code Exchange Code Challenge Method" set to "S256".
 
 1. Reference component
 
@@ -39,10 +42,17 @@ You first need a Keycloak client using the standard flow, public, setup with "Pr
 	window.addEventListener('ebrains-iam-auth:ready', () => {
 		console.log('Client is ready');
 	});
+
 	// ebrains-iam-auth:authenticated event
 	window.addEventListener('ebrains-iam-auth:authenticated', () => {
 		console.log(keycloak.idTokenParsed);
 		console.log('User is authenticated');
+	});
+
+	// ebrains-iam-auth:error event
+	window.addEventListener('ebrains-iam-auth:error', (event) => {
+		console.log(event.detail);
+		console.log('An error occurred');
 	});
 </script>
 ```

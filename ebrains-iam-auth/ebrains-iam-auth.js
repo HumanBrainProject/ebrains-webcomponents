@@ -78,7 +78,14 @@ customElements.define(
             );
           }
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          this.dispatchEvent('ebrains-iam-auth:error', {
+            bubbles: true,
+            detail: {
+              error: err,
+            },
+          });
+        });
     }
     login() {
       keycloak.login({
