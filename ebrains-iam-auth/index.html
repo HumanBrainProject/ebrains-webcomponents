@@ -8,7 +8,6 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="../index.css" />
-	<script src="./ebrains-iam-auth.js"></script>
 </head>
 
 <body>
@@ -18,23 +17,10 @@
 			href="https://github.com/HumanBrainProject/ebrains-webcomponents/">https://github.com/HumanBrainProject/ebrains-webcomponents</a>
 		<section>
 			<h1>ebrains-iam-auth</h1>
-			<ebrains-iam-auth client="emailsignatureapp" scope="openid profile email"></ebrains-iam-auth>
-			<pre id="user"></pre>
-			<button id="logout">logout</button>
+			<p>This component does not render anything, check README for instructions</p>
 		</section>
 	</main>
-	<script>
-		window.addEventListener('ebrains-iam-auth:ready', () => {
-			console.log("KC JS client is ready");
-		});
-		window.addEventListener('ebrains-iam-auth:authenticated', () => {
-			const container = document.getElementById("user");
-			container.textContent = JSON.stringify(keycloak.idTokenParsed, null, 1);
 
-			const logout = document.getElementById("logout");
-			logout.addEventListener("click", () => keycloak.logout());
-		});
-	</script>
 </body>
 
 </html>
