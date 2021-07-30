@@ -7,7 +7,6 @@ customElements.define(
       this.defaultRealm = 'hbp';
       this.config = {
         'public-client': true,
-        'confidential-port': 0,
         url: 'https://iam.ebrains.eu/auth',
       };
     }
