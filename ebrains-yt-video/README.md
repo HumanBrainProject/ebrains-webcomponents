@@ -1,10 +1,8 @@
-# Youtube Video Privacy Overlay
-
-## ebrains-yt-video
+# ebrains-yt-video
 
 Displays an overlay warning the user about Youtube/Google privacy if s.he loads/watches the video. Clicking on "watch video" button makes the embedded iframe created in the document
 
-### Attributes
+## Attributes
 
 | name  | description                           | mandatory |
 | ----- | ------------------------------------- | --------- |
@@ -12,7 +10,7 @@ Displays an overlay warning the user about Youtube/Google privacy if s.he loads/
 | title | Video title                           |           |
 | cover | URL to image used as background cover |           |
 
-### Style
+## Style
 
 CSS custom properties
 
@@ -27,15 +25,15 @@ CSS custom properties
 | --ebrains-yt-video-overlay-a-active      | Link active color                                         | #82c558                            |
 | --ebrains-yt-video-overlay-a-visited     | Link visited color                                        | #82c558                            |
 
-Usage
+## Usage
 
-Reference component
+1. Reference component using the right version.
 
 ```
-<script src="https://cdn.jsdelivr.net/gh/HumanBrainProject/ebrains-webcomponents/ebrains-yt-video/ebrains-yt-video.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/HumanBrainProject/ebrains-webcomponents@{version}/ebrains-yt-video/ebrains-yt-video.js"></script>
 ```
 
-Use in HTML
+2. Use in HTML
 
 ```
 <ebrains-yt-video
@@ -44,4 +42,6 @@ Use in HTML
 </ebrains-yt-video>
 ```
 
-⚠️ You have to style ebrains-yt-video on your side. If you don't define css width and height properties, component should be not visible.
+## ⚠️ Warning
+
+You have to style ebrains-yt-video on your side. If you don't define css width and height properties, component should be not visible.
