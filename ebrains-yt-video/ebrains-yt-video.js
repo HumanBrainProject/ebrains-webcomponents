@@ -129,12 +129,10 @@ customElements.define(
       }
     }
     renderIFrame() {
-      this.shadowRoot?.appendChild(this.iframeTemplate.content.cloneNode(true));
+      this.shadowRoot.appendChild(this.iframeTemplate.content.cloneNode(true));
     }
     renderOverlay() {
-      this.shadowRoot?.appendChild(
-        this.overlayTemplate.content.cloneNode(true)
-      );
+      this.shadowRoot.appendChild(this.overlayTemplate.content.cloneNode(true));
       const watchButton = this.shadowRoot.getElementById('watch');
       const remember = this.shadowRoot.getElementById('remember');
       watchButton.addEventListener('click', () => {
