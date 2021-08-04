@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>EBRAINS WebComponents Demo</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../index.css" />
+	<script src="./ebrains-toast.js"></script>
+	<style>
+		body {
+			height: 200vh;
+		}
+
+		ebrains-toast {
+			font-size: 14px;
+			text-align: justify;
+		}
+
+		h1 {
+			margin: 0;
+			padding: 0;
+		}
+
+		#toggle {
+			display: block;
+			margin-top: 50px;
+		}
+	</style>
+
+</head>
+
+<body>
+	<main>
+		<h1>EBRAINS WebComponents Demo</h1>
+		<a
+			href="https://github.com/HumanBrainProject/ebrains-webcomponents/">https://github.com/HumanBrainProject/ebrains-webcomponents</a>
+		<button id="toggle">Toggle Toast Visibility</button>
+	</main>
+
+	<ebrains-toast open="1">
+		<h1>Lorem Ipsum</h1>
+		<p>urna porttitor rhoncus dolor purus non enim praesent elementum facilisis leo vel fringilla est ullamcorper
+			eget nulla facilisi etiam dignissim</p>
+		<p>Consectetur sit <a href="#">Lorem Ipsum</a></p>
+	</ebrains-toast>
+
+
+	<script>
+		const toggleButton = document.getElementById("toggle");
+		const toastElt = document.querySelector("ebrains-toast");
+
+		function toggleVisibity() {
+			const isOpen = toastElt.getAttribute("open") === "1";
+			if (isOpen) {
+				toastElt.setAttribute("open", "0");
+			} else {
+				toastElt.setAttribute("open", "1");
+			}
+		}
+
+		toggleButton.addEventListener("click", toggleVisibity);
+
+		window.addEventListener('ebrains-toast:open', (event) => {
+			console.log('toast open event', event.target)
+		});
+		window.addEventListener('ebrains-toast:close', (event) => {
+			console.log('toast close event', event.target)
+		});
+	</script>
+</body>
+
+</html>
