@@ -51,9 +51,19 @@ customElements.define(
       });
 
       script.addEventListener('error', () => {
-        throw new Error(`Error while loading ${this.keycloakScriptURL}`);
+        const error = `Error while loading ${this.keycloakScriptURL}`;
+        this.dispatchCustomEvent('error', { error });
       });
       this.shadowRoot.appendChild(script);
+    }
+
+    dispatchCustomEvent(eventName, detail = {}) {
+      this.dispatchEvent(
+        new CustomEvent(`ebrains-iam-auth:${eventName}`, {
+          bubbles: true,
+          detail: { ...detail },
+        })
+      );
     }
     initKeycloakAuth() {
       window.keycloak = Keycloak(this.config);
@@ -63,28 +73,15 @@ customElements.define(
           pkceMethod: 'S256',
         })
         .then((auth) => {
-          this.dispatchEvent(
-            new CustomEvent('ebrains-iam-auth:ready', {
-              bubbles: true,
-            })
-          );
+          this.dispatchCustomEvent('ready');
           if (!auth && !this.noAuto) {
             this.login();
           } else {
-            this.dispatchEvent(
-              new CustomEvent('ebrains-iam-auth:authenticated', {
-                bubbles: true,
-              })
-            );
+            this.dispatchCustomEvent('authenticated');
           }
         })
         .catch((err) => {
-          this.dispatchEvent('ebrains-iam-auth:error', {
-            bubbles: true,
-            detail: {
-              error: err,
-            },
-          });
+          this.dispatchCustomEvent('error', { error: err });
         });
     }
     login() {
